@@ -2,6 +2,10 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+// Middleware to parse JSON and URL-encoded data
+app.use(express.json()) // Parse JSON bodiespp.use(express.bodyParser());
+app.use(express.urlencoded({ extended: true })) // Parse URL-encoded bodies
+
 // Hello World endpoint
 app.get('/', (req, res) => {
   res.send('Hello World!')
